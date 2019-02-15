@@ -55,7 +55,7 @@
     left: 50%;
     height: 60vmin;
     width: 60vmin;
-    background-image: url(fump.svg);
+    background-image: url(/images/fump3D.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -120,7 +120,7 @@
 
 @keyframes popInLeftFump {
     0% {
-        background-image: url(fump-reverse.svg);
+        background-image: url(/images/fump-single-reverse.svg);
         top: 20px;
         left: 20px;
         height: 30px;
@@ -160,4 +160,8 @@
         transform: scale3d(1, 1, 1);
         opacity: 100;
     }
+}
+
+#fump-header-logo {
+    height: 20px;
 }
