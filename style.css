@@ -5,7 +5,8 @@
     position: fixed;
     height: 100vh;
     width: 100vw;
-    max-width: 100vw;;
+    max-width: 100vw;
+    ;
     background-color: white;
     overflow: hidden;
     color: white;
@@ -129,6 +130,7 @@
         -webkit-transform: translate3d(-200px, 0, 0) scale3d(0.1, 0.1, 0.1);
         transform: translate3d(-200px, 0, 0) scale3d(0.1, 0.1, 0.1);
     }
+
     40% {
         opacity: 1;
         -webkit-transform: translate3d(0, 0, 0) scale3d(1.08, 1.08, 1.08);
@@ -136,18 +138,21 @@
         -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
         animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
     }
+
     60% {
         -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
         animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
         -webkit-transform: scale3d(1, 1, 1);
         transform: scale3d(1, 1, 1);
     }
+
     80% {
         -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
         animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
         -webkit-transform: scale3d(1.03, 1.03, 1.03);
         transform: scale3d(1.03, 1.03, 1.03);
     }
+
     100% {
         background-image: url(fump-reverse.svg);
         top: 20px;
@@ -164,4 +169,16 @@
 
 #fump-header-logo {
     height: 20px;
+}
+
+.welcome-blog {
+    position: relative;
+    /* height: 100px; */
+    /* max-height: 300px; */
+    background-color: #007bff;
+}
+
+.max-150 {
+    width:100px;
+    
 }
