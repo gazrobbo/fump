@@ -177,8 +177,14 @@
     /* max-height: 300px; */
     background-color: #007bff;
 }
-
-.max-150 {
-    width:100px;
-    
+ 
+.blog-image-left{
+    width:250px;
+    float: left;
+    margin: 10px 30px 10px 0px;
+}
+.blog-image-right{
+    width:250px;
+    float: right;
+    margin: 10px 0px 10px 30px;
 }
