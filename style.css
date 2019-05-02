@@ -10,10 +10,29 @@
     background-color: white;
     overflow: hidden;
     color: white;
+    -webkit-animation-name: main-background;
     animation-name: main-background;
+    -webkit-animation-duration: 2.05s;
     animation-duration: 2.05s;
+    -webkit-animation-iteration-count: 1;
     animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes main-background {
+    0% {
+        background-color: white;
+    }
+
+    75% {
+        background-color: white;
+    }
+
+    100% {
+        background-color: transparent;
+        visibility: hidden;
+    }
 }
 
 @keyframes main-background {
@@ -40,12 +59,19 @@
     width: 20px;
     border-radius: 50%;
     background-color: #007bff;
+    -webkit-animation-name: fump-smash2;
     animation-name: fump-smash2;
+    -webkit-animation-duration: 0.7s;
     animation-duration: 0.7s;
+    -webkit-animation-iteration-count: 1;
     animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
+    -webkit-transition-timing-function: ease-out;
     transition-timing-function: ease-out;
+    -webkit-animation-delay: 1.4s;
     animation-delay: 1.4s;
+    -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%)
 }
 
@@ -61,7 +87,9 @@
     background-position: center;
     background-size: contain;
     opacity: 0;
+    -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    -webkit-animation: fump-smash1 1.4s ease-in 0s 1 forwards, popInLeftFump 0.8s ease-in 3.75s 1 forwards;
     animation: fump-smash1 1.4s ease-in 0s 1 forwards, popInLeftFump 0.8s ease-in 3.75s 1 forwards;
 }
 
@@ -71,6 +99,32 @@
 
 
 /*keyframes animation*/
+
+@-webkit-keyframes fump-smash1 {
+    0% {
+        opacity: 0;
+        top: 30%;
+    }
+
+    50% {
+        opacity: 100;
+        height: 60vmin;
+        width: 60vmin;
+    }
+
+    85% {
+        opacity: 100;
+        top: 30%;
+        height: 20vmin;
+        width: 20vmin;
+    }
+
+    100% {
+        top: 80%;
+        height: 30px;
+        width: 30px;
+    }
+}
 
 @keyframes fump-smash1 {
     0% {
@@ -98,6 +152,26 @@
     }
 }
 
+@-webkit-keyframes fump-smash2 {
+    0% {}
+
+    50% {
+        background-color: #3395ff;
+    }
+
+    /* 50% {background-color: transparent;} */
+    99% {
+        height: 300vmax;
+        width: 300vmax;
+        background-color: transparent;
+    }
+
+    100% {
+        visibility: hidden;
+
+    }
+}
+
 @keyframes fump-smash2 {
     0% {}
 
@@ -115,6 +189,55 @@
     100% {
         visibility: hidden;
 
+    }
+}
+
+
+@-webkit-keyframes popInLeftFump {
+    0% {
+        background-image: url(/images/fump-single-reverse.svg);
+        top: 20px;
+        left: 20px;
+        height: 30px;
+        width: 30px;
+        opacity: 0;
+        -webkit-transform: translate3d(-200px, 0, 0) scale3d(0.1, 0.1, 0.1);
+        transform: translate3d(-200px, 0, 0) scale3d(0.1, 0.1, 0.1);
+    }
+
+    40% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0) scale3d(1.08, 1.08, 1.08);
+        transform: translate3d(0, 0, 0) scale3d(1.08, 1.08, 1.08);
+        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+        animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+    }
+
+    60% {
+        -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+        animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+
+    80% {
+        -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+        animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+        -webkit-transform: scale3d(1.03, 1.03, 1.03);
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+
+    100% {
+        background-image: url(fump-reverse.svg);
+        top: 20px;
+        left: 20px;
+        height: 30px;
+        width: 30px;
+        -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+        opacity: 100;
     }
 }
 
@@ -177,22 +300,74 @@
     /* max-height: 300px; */
     background-color: #007bff;
 }
- 
-.blog-image-left{
-    width:250px;
+
+.blog-image-left {
+    width: 250px;
     float: left;
     margin: 10px 30px 10px 0px;
 }
-.blog-image-right{
-    width:250px;
+
+.blog-image-right {
+    width: 250px;
     float: right;
     margin: 10px 0px 10px 30px;
 }
 
 .blue-border-left {
-    border-left: 3px solid blue ;
+    border-left: 3px solid blue;
 }
 
 .padding-50 {
-    padding: 50px!important;
+    padding: 50px !important;
+}
+
+
+@-webkit-keyframes cookies-delay {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes cookies-delay {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#cookies-notification {
+    background-color: white;
+    bottom: 0px;
+    position: fixed;
+    width: 100vw;
+    text-align: center;
+    z-index: 1600;
+    padding: 15px;
+    -webkit-animation: cookies-delay 4s ease;
+    animation: cookies-delay 4s ease;
+}
+
+
+#cookies-notification>p>a {
+    text-decoration: underline;
+}
+
+#agreeCookies {
+    min-width: 150px;
 }
